@@ -819,7 +819,8 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
   std::string ver_date = android::base::GetProperty("ro.ssos.build_date", "");
 
   std::vector<std::string> title_lines = {
-    "Version " + android::base::GetProperty("ro.ssos.base.version", "(unknown)") +
+    "Version " + android::base::GetProperty("ro.ssos.base.version", "(unknown)") + " " +
+        android::base::GetProperty("ro.ssos.codename", "(unknown)") +
         " (" + ver_date + ")",
   };
   if (android::base::GetBoolProperty("ro.build.ab_update", false)) {
